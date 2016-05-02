@@ -1,0 +1,20 @@
+<div class="movie-overview">
+    <div class="inner">
+	  <a href="#/movie/{{movie.id}}" ng-if="movieDiary" class="diary-btn"><span class="glyphicon glyphicon-book"></span><div class="count">{{movie.diary_entries.length || 0}}</div></a>
+	
+        <h2>{{movie.title}} <span class="first-air">{{movie.release_date}}</span></h2>
+        <div class="movie-image">
+            <img ng-src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}" alt="{{movie.title}}"/>
+        </div>
+        <div class="movie-content" ng-switch="hasMovie(movie.id)">
+            {{movie.vote_average}}<br />
+            <span class="num-votes">From {{movie.vote_count}} votes.</span>
+            <div class="rating-container" ng-if="movieRating">
+                <rating ng-model="movie.personal_rating" max="5"></rating>
+            </div>
+            <button ng-switch-when="false" class="track-btn" ng-click="trackMovie(movie)">Add Movie</button>
+            <button ng-switch-when="true" class="track-btn untrack" ng-click="unTrackMovie(movie.id)">Remove Movie</button>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

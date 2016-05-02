@@ -1,0 +1,39 @@
+<div class="movie-container">
+    <h1><ul class="dots top"><li></li><li></li><li></li></ul> My <span class="name">{{movie.data.title}}</span> diary... <ul class="dots bottom"><li></li><li></li><li></li></ul></h1>
+    <div class="content row">
+        <div class="entry-container col-md-6">
+            <h2>New entry</h2>
+            <form name="movie.newEntryForm" novalidate>
+                <div class="form-group">
+
+                   <div class="form-group" ng-class="{'has-error': (movie.newEntryForm.entry.$invalid), 'has-success': (movie.newEntryForm.entry.$valid)}">
+                        <label class="control-label">Entry:</label>
+                        <textarea name="entry" ng-model="movie.newEntry.entry" rows="5" class="form-control" required min-words="8"></textarea>
+                        <div class="input-error" ng-messages="movie.newEntryForm.entry.$error">
+                            <div class="message" ng-message="required">This field is required</div>
+                            <div class="message" ng-message="minWords">You must provide at least 8 words</div>
+                        </div>
+                    </div>
+
+                    <div class="controls">
+                        <button ng-disabled="movie.newEntryForm.$invalid" class="movie-btn save-btn" ng-click="movie.saveEntry()">Save</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="list-container col-md-6">
+            <h2>Past entries</h2>
+            <ul>
+                <li ng-repeat="entry in movie.data.diary_entries track by $index">
+                    <h3>Movie<span class="date">added on {{entry.date | date}}.</span></h3>
+                    <p>{{entry.entry}}</p>
+                    <div class="controls">
+                        <button class="movie-btn remove-btn" ng-click="movie.removeEntry($index)">Remove</button>
+                    </div>
+                </li>
+                <li ng-if="!movie.data.diary_entries || movie.data.diary_entries.length === 0" class="no-data">There are currently no entries.</li>
+            </ul>
+        </div>
+    </div>
+</div>

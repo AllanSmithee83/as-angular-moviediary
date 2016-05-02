@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>MovieDiary</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="sections/search/search.css" />
+    <link rel="stylesheet" href="components/movie/movie.css" />
+    <link rel="stylesheet" href="sections/home/home.css" />
+	<link rel="stylesheet" href="sections/movie/movie.css" />
+	
+	<link rel="icon" type="image/ico" href="assets/favicon.ico"/>
+	
+</head>
+<body ng-app="app">
+    <header class="app-header">
+        <div class="logo">A.S. Movies</div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#/">Main <div class="arrow-up"></div></a>
+                </li>
+                <li>
+                    <a href="#/my-movies">My Movies <div class="arrow-up"></div></a>
+                </li>
+                <li>
+                    <a href="#/search">Search <div class="arrow-up"></div></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container container" ng-view></main>
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+	 <script src="node_modules/angular-messages/angular-messages.min.js"></script>
+	
+    <script src="assets/js/ui-bootstrap-tpls-0.12.1.min.js"></script>
+    <script src="assets/js/angular-local-storage.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="app.core.js"></script>
+    <script src="app.routes.js"></script>
+    <script src="app.services.js"></script>
+
+    <!-- SERVICES -->
+    <script src="services/movie.fct.js"></script>
+    <script src="services/store.fct.js"></script>
+
+    <!-- CONTROLLERS -->
+    <script src="sections/my-movies/my-movies.ctrl.js"></script>
+    <script src="sections/search/search.ctrl.js"></script>
+    <script src="sections/movie/movie.ctrl.js"></script>
+    <script src="sections/home/home.ctrl.js"></script>
+
+    <!-- COMPONENTS -->
+    <script src="components/movie/movie.drct.js"></script>
+	
+	 <!-- DIRECTIVES -->
+    <script src="directives/min-words.drct.js"></script>
+  
+
+</body>
+</html>

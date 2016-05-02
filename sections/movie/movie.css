@@ -1,0 +1,171 @@
+.movie-container h1 {
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #666;
+    vertical-align: middle;
+    color: #333;
+}
+.movie-container h1 .dots.top {
+    margin-bottom: 10px;
+}
+.movie-container h1 .name {
+    font-weight: normal;
+    color: #177199;
+    text-shadow: 1px 1px 0 #478999;
+    font-family: 'Lobster', cursive;
+}
+.movie-container .content {
+    background-color: #F1F1F1;
+    margin-top: 35px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 0 #E1E1E1;
+}
+.movie-container .content .entry-container,
+.movie-container .content .list-container {
+    padding: 20px;
+}
+.movie-container .content .entry-container h2,
+.movie-container .content .list-container h2 {
+    margin: 0 0 20px 0;
+    font-weight: 300;
+}
+.movie-container .content .movie-btn {
+    font-size: 18px;
+    background: #b4cc21;
+    border: none;
+    border-radius: 5px;
+    color: #5a6515;
+    border-bottom: 3px solid #96ab14;
+    text-shadow: 0 1px 0 #d9f07e;
+    padding: 0 10px;
+    line-height: 40px;
+}
+.movie-container .content .movie-btn.remove-btn {
+    background: #e74536;
+    color: #fdfdfd;
+    border-bottom: 3px solid #ba382c;
+    text-shadow: 0 -1px 0 #8a3030;
+    font-size: 12px;
+    padding: 0 10px;
+    line-height: 25px;
+}
+.movie-container .content button[disabled].save-btn {
+    color: #656160;
+    border-bottom: 3px solid #aba39b;
+    text-shadow: 0 1px 0 #f0d7d7;
+    background: #bcbccc;
+}
+.movie-container .content .entry-container .controls {
+    text-align: right;
+}
+.movie-container .content .list-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.movie-container .content .list-container ul li {
+    border-bottom: dotted 1px #CCC;
+    padding-bottom: 20px;
+}
+.movie-container .content .list-container ul li.no-data {
+    border-bottom: none;
+    text-align: center;
+    font-size: 16px;
+    font-style: italic;
+    color: #999;
+    line-height: 100px;
+}
+.movie-container .content .list-container ul li h3 {
+    color: #177199;
+    text-shadow: 1px 1px 0 #478999;
+    font-family: 'Lobster', cursive;
+}
+.movie-container .content .list-container ul li h3 .date {
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    text-shadow: 1px 1px 0 #999;
+}
+.movie-container .content .list-container ul li p {
+    font-size: 16px;
+    font-style: italic;
+    padding: 20px;
+}
+.movie-container .content .list-container ul li .controls {
+    text-align: right;
+}
+.movie-container .form-group {
+    padding-bottom: 20px;
+    position: relative;
+}
+.movie-container .form-group .input-error {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.movie-container .form-group .input-error .message {
+    text-align: center;
+    color: #e74536;
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes bounceOut {
+    20% {
+        transform: scale3d(.9, .9, .9);
+    }
+
+    50%, 55% {
+        opacity: 1;
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+}
+
+.movie-container .form-group .input-error .message.ng-enter {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    animation-name: bounceIn;
+}
+
+.movie-container .form-group .input-error .message.ng-leave {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    animation-name: bounceOut;
+}

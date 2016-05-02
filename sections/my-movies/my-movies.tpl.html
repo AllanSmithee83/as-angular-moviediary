@@ -1,0 +1,8 @@
+<ul class="dots"><li></li><li></li><li></li></ul>
+<ul class="query-results row">
+    <li class="movie col-sm-6" ng-repeat="movie in mymovies.results track by movie.id">
+        <movie-overview movie="movie" movie-rating="true" movie-diary="true"></movie-overview>
+    </li>
+    <li class="no-data" ng-if="mymovies.results.length == 0">You have not chosen to track any movies yet, find movie to track <a href="#/search">here</a>.</li>
+</ul>
+<ul class="dots bottom"><li></li><li></li><li></li></ul>
